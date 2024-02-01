@@ -1,0 +1,41 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2e4a70;
+  text-align: center; /* Centra el contenido horizontalmente */
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Buttons */
+.buttons {
+  padding: 20px 20px;
+  cursor: pointer;
+  font: bold 120% monospace;
+  font-size: 20px;
+  text-align: center;
+  color: #000000;
+  border: 3px solid #000000;
+  background-color: #EEF5FF;
+}
+
+/* Texto */
+.texto1 {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.texto2 {
+  color: #e03b3b;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px;
+}

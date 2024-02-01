@@ -1,5 +1,0 @@
-username:why-ego
-
-token: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 
-
-git clone https://why-ego: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@github.com/why-ego/SO1_1S2024_202006353.git

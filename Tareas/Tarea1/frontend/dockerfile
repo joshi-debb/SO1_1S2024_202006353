@@ -1,0 +1,19 @@
+
+FROM node:21.6.1
+
+# Create app directory
+WORKDIR /front
+
+# Install app dependencies
+COPY package*.json ./
+
+COPY package-lock.json ./
+
+# Bundle app source
+RUN npm install
+
+COPY . ./
+
+EXPOSE 5173
+
+CMD [ "npm", "run", "dev" ]

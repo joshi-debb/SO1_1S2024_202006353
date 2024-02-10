@@ -14,7 +14,7 @@ app.use(express.urlencoded({limit: '50mb', extended: true}));
 app.use(morgan('dev'));
 app.use(express.json()); 
 
-mongoose.connect('mongodb://DB:27017/DB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://mongo:27017/DB', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'Error de conexión a MongoDB:'));

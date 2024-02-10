@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -20,19 +19,19 @@ function App() {
     });
     const data = await response.json();
     console.log(data);
-    
+
   }
 
 
-    async function startWebcam() {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        const webcamElement = document.getElementById("webcam");
-        webcamElement.srcObject = stream;
-      } catch (error) {
-        console.error("Error accediendo a la  webcam:", error);
-      }
+  async function startWebcam() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const webcamElement = document.getElementById("webcam");
+      webcamElement.srcObject = stream;
+    } catch (error) {
+      console.error("Error accediendo a la  webcam:", error);
     }
+  }
   startWebcam();
 
   return (

@@ -13,7 +13,7 @@ services:
 
   backend:
     build: ./backend 
-    image: "backend"
+    image: "backend_image"
     restart: always
     container_name: 'backend_container'
     ports:
@@ -21,14 +21,16 @@ services:
 
   frontend:
     build: ./frontend
-    image: "frontend"
+    image: "frontend_image"
     restart: always
     container_name: 'frontend_container'
-
     ports:
       - "3000:3000"
     depends_on:
       - backend
+
+    links:
+      - mongo
 
 volumes:
   volume_mongo: 

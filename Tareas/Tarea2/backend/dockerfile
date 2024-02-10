@@ -1,9 +1,12 @@
 
 FROM node:21.6.1
 
-WORKDIR /usr/src/app
+WORKDIR /backend
 
+# Install app dependencies
 COPY package*.json ./
+
+COPY package-lock.json ./
 
 RUN npm install
 
@@ -11,4 +14,4 @@ COPY . .
 
 EXPOSE 2024
 
-CMD ["node", "/index.js"]
+CMD ["node", "index.js"]

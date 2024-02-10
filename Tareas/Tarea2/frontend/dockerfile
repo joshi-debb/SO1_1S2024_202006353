@@ -1,0 +1,20 @@
+
+
+FROM node:21.6.1
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /usr/src/app
+COPY package*.json ./
+
+# Instala las dependencias
+RUN npm install
+
+# Copia el resto de los archivos de la aplicación
+COPY . .
+
+
+# Expone el puerto en el que la aplicación se ejecutará
+EXPOSE 3000
+
+# Comando para iniciar la aplicación cuando se ejecute el contenedor
+CMD ["npm", "start"]

@@ -14,7 +14,7 @@ app.use(express.urlencoded({limit: '50mb', extended: true}));
 app.use(morgan('dev'));
 app.use(express.json()); 
 
-mongoose.connect('mongodb://mongo:27017/DB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://MongoDB:27017/tarea2db');
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'Error de conexión a MongoDB:'));
@@ -27,6 +27,10 @@ const Persona = mongoose.model('personas', {
   fecha: Date
 });
 
+
+app.get('/', (req, res) => {
+  res.send('API de personas');
+});
 
 // Insertar un nuevo persona
 app.post('/InsertPersona', async (req, res) => {

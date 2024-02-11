@@ -1,17 +1,18 @@
-
 FROM node:21.6.1
 
-WORKDIR /backend
+# Create app directory
+WORKDIR /back
 
 # Install app dependencies
 COPY package*.json ./
 
 COPY package-lock.json ./
 
+# Bundle app source
 RUN npm install
 
-COPY . .
+COPY . ./
 
 EXPOSE 2024
 
-CMD ["node", "index.js"]
+CMD [ "node", "index.js" ]

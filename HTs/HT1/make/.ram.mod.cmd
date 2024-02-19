@@ -1,0 +1,1 @@
+savedcmd_/home/why/Desktop/SO1_1S2024_202006353/HTs/HT1/make/ram.mod := printf '%s\n'   ram.o | awk '!x[$$0]++ { print("/home/why/Desktop/SO1_1S2024_202006353/HTs/HT1/make/"$$0) }' > /home/why/Desktop/SO1_1S2024_202006353/HTs/HT1/make/ram.mod

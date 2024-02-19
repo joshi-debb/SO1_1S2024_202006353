@@ -1,0 +1,1 @@
+savedcmd_/home/why/Desktop/SO1_1S2024_202006353/HTs/HT1/make/Module.symvers :=  scripts/mod/modpost -m -a      -o /home/why/Desktop/SO1_1S2024_202006353/HTs/HT1/make/Module.symvers -T /home/why/Desktop/SO1_1S2024_202006353/HTs/HT1/make/modules.order -i Module.symvers -e 

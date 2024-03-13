@@ -34,6 +34,28 @@ General
     display: flex;
     flex: 1; /* Esto hará que ocupe todo el espacio restante en la columna */
   }
+
+  .graphics-content {
+    padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex: 1; /* Esto hará que ocupe todo el espacio restante en la columna */
+    text-align: center;
+    
+  }
+
+  .graphics-content2 {
+    padding-top: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex: 1; /* Esto hará que ocupe todo el espacio restante en la columna */
+    text-align: center;
+    
+  }
   
   .navbar {
     height: auto;
@@ -43,9 +65,30 @@ General
     background-color: #526D82;
     text-align: center; /* Alinea el texto al centro horizontalmente */
   }
+
+
+  
+
+  .navbar2 {
+    height: auto;
+    width: auto;
+    padding: 1rem 2rem;
+    border-bottom: 5px solid #000000;
+    background-color: #6f7f8b;
+    text-align: center;
+  }
   
   .custom-color {
     color: #9DB2BF;
+  }
+
+  .custom-color2 {
+    color: #000000;
+  }
+
+  .custom-color3 {
+    color: #000000;
+    padding-bottom: 50px;
   }
 
   .sidebar {

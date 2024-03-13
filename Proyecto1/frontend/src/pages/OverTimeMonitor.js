@@ -41,18 +41,21 @@ function OverTimeMonitor() {
 
   return (
     <div className="container">
-      <div className="navbar">
-        <h1 className="custom-color">SYSTEM MONITOR SO1_PY1_1S2024</h1>
+      <div className="navbar2">
+        <h1 className="custom-color2">OVER TIME MONITOR</h1>
       </div>
-      <div className='content'>
+      <div className='graphics-content2'>
+
         <div style={chartContainerStyle}>
-          <h2>CPU Usage Over Time</h2>
-          <Line data={cpuData} />
-        </div>
-        <div style={chartContainerStyle}>
-          <h2>RAM Usage Over Time</h2>
+          <h2 className="custom-color3">RAM Usage Over Time</h2>
           <Line data={ramData} />
         </div>
+
+        <div style={chartContainerStyle}>
+          <h2 className="custom-color3">CPU Usage Over Time</h2>
+          <Line data={cpuData} />
+        </div>
+
 
       </div>
 

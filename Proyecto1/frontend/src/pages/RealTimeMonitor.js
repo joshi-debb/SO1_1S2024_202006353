@@ -71,14 +71,27 @@ function RealTimeMonitor() {
   };
 
   return (
-    <div style={{ display: 'flex' }}>
-      <h2>RAM Usage</h2>
-      <div style={chartContainerStyle}>
-        <Doughnut data={data} />
+
+    <div className="container">
+      <div className="navbar2">
+        <h1 className="custom-color2">REAL TIME MONITOR</h1>
       </div>
-      <div style={chartContainerStyle}>
-        <Doughnut data={data2} />
+      <div className='graphics-content'>
+
+        <div style={chartContainerStyle}>
+          <h2 className="custom-color3">RAM Usage Real Time</h2>
+          <Doughnut data={data} />
+        </div>
+
+        <div style={chartContainerStyle}>
+          <h2 className="custom-color3">CPU Usage Real Time</h2>
+          <Doughnut data={data2} />
+        </div>
+
+
       </div>
+
+
     </div>
   );
 }

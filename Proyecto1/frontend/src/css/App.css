@@ -1,0 +1,150 @@
+/* 
+General 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #6e6f70;
+  }
+  
+  
+  /* 
+  General 
+  */
+  
+  /* 
+  Paneles 
+  */
+  
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Establece el alto total de la ventana */
+  }
+  
+  .content {
+    display: flex;
+    flex: 1; /* Esto hará que ocupe todo el espacio restante en la columna */
+  }
+  
+  .navbar {
+    height: auto;
+    width: auto;
+    padding: 1rem 2rem;
+    border: 5px solid #000000;
+    background-color: #526D82;
+    text-align: center; /* Alinea el texto al centro horizontalmente */
+  }
+  
+  .custom-color {
+    color: #9DB2BF;
+  }
+
+  .sidebar {
+    width: 200px; /* Ajusta el ancho según tus preferencias */
+    height: calc(100vh - 120px);
+    overflow-y: auto; /* Permite desplazamiento vertical si es necesario */
+    border-right: 5px solid #000000;
+    border-bottom: 5px solid #000000;
+    border-left: 5px solid #000000;
+    background-color: #465063; /* Color de fondo del sidebar */
+    padding-top: 20px; /* Espacio superior para el título */
+  }
+  
+  .sidebar h2 {
+    color: #ffffff; /* Color del título del sidebar */
+    font-size: 1.5rem; /* Tamaño del título */
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Espacio inferior para separar el título de los elementos de la lista */
+  }
+  
+  .sidebar ul {
+    list-style-type: none; /* Quita los estilos de lista predeterminados */
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px 20px; /* Añade espacio entre los elementos de la lista */
+  }
+  
+  .sidebar li a {
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    color: #ffffff; /* Color del texto de los enlaces */
+    display: block; /* Hace que los enlaces ocupen todo el ancho disponible */
+    transition: background-color 0.3s; /* Agrega una transición suave al cambiar el color de fondo */
+  }
+  
+  .sidebar li a:hover {
+    background-color: #1e2a38; /* Cambia el color de fondo al pasar el ratón */
+  }
+  
+  .pages-style {
+    position: relative;
+    width: 900px;
+    height: calc(100vh - 100px);
+    cursor: pointer;
+    border-bottom: 5px solid #000000;
+    border-right: 5px solid #000000;
+    background-color: #b7b8b9;
+  }  
+
+  
+  /* 
+  Paneles 
+  */
+
+  
+  /* 
+  buttons 
+  */
+  
+  
+  .buttons {
+    padding: 7px 10px;
+    cursor: pointer;
+    font: bold 120% monospace;
+    color: #000000;
+    border: 2px solid #000000;
+    background-color:  #EEF5FF;
+  }
+  
+  .file-input-label {
+    padding: 7px 10px;
+    cursor: pointer;
+    font: bold 120% monospace;
+    border: 2px solid #000000;
+  
+    color: #000000;
+    background-color:  #EEF5FF;
+  }
+  
+  .file-input-wrapper {
+    border-left: 5px solid #000000;
+    border-right: 5px solid #000000;
+    position: relative;
+    display: inline-block;
+    background-color: #060606;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  
+  .file-input-label:hover {
+    background-color: #ffffff;
+  }
+  
+  
+  /* 
+  buttons 
+  */
+ 

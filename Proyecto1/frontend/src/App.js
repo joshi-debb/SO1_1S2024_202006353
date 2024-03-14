@@ -9,11 +9,6 @@ import ProcessTree from './pages/ProcessTree';
 import StateChange from './pages/StateChange';
 import Home from './pages/Home';
 
-
-
-
-
-
 import './css/App.css';
 
 function App() {

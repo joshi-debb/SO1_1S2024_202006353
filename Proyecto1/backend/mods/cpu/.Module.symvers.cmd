@@ -1,0 +1,1 @@
+savedcmd_/home/why/Desktop/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/Module.symvers :=  scripts/mod/modpost -m -a      -o /home/why/Desktop/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/Module.symvers -T /home/why/Desktop/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/modules.order -i Module.symvers -e 

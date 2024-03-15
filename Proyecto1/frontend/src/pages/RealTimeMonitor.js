@@ -4,32 +4,62 @@ import React from 'react';
 import { useState, useEffect } from "react";
 
 import { Doughnut } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
+import Chart, { ArcElement, Legend, Tooltip } from 'chart.js/auto';
+
+
+Chart.register(ArcElement, Tooltip, Legend);
+
 
 
 function RealTimeMonitor() {
 
-  // const [result, setResult] = useState('');
+  const [ramUsage, setRamUsage] = useState('');
 
-  //   useEffect(() => {
-  //       const fetchData = async () => {
-  //           // const response = await Cmds();
-  //           // setResult(response);
-  //       };
+  const [cpuUsage, setCpuUsage] = useState('');
 
-  //       fetchData(); // Llama a la función fetchData una vez al cargar el componente
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/process-data');
+        const data = await response.json();
+        setCpuUsage(JSON.parse(data));
+      } catch (error) {
+        console.error('Error al consultar el endpoint:', error);
+      }
+    };
 
-  //       const intervalId = setInterval(fetchData, 500); // Llama a fetchData cada 500ms
+    const intervalId = setInterval(fetchData, 500);
 
-  //       return () => clearInterval(intervalId); // Limpia el intervalo cuando el componente se desmonta
-  //   }, [result]); // Ejecuta useEffect cada vez que result cambie
+    // Limpia el intervalo cuando el componente se desmonta o cuando la función useEffect se ejecuta nuevamente
+    return () => clearInterval(intervalId);
+  }, []); // El segundo argumento del useEffect es un array vacío para que se ejecute solo una vez al montar el componente
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/ram-usage');
+        const data = await response.json();
+        setRamUsage(JSON.parse(data));
+        console.log(ramUsage);
+      } catch (error) {
+        console.error('Error al consultar el endpoint:', error);
+      }
+    };
+
+    const intervalId = setInterval(fetchData, 500);
+
+    // Limpia el intervalo cuando el componente se desmonta o cuando la función useEffect se ejecuta nuevamente
+    return () => clearInterval(intervalId);
+  }, []); // El segundo argumento del useEffect es un array vacío para que se ejecute solo una vez al montar el componente
+
+
 
   const data = {
     labels: ['Used', 'Free'],
     datasets: [
       {
         label: 'RAM',
-        data: [1000, 1000],
+        data: [parseInt(ramUsage.used), parseInt(ramUsage.free)],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)'

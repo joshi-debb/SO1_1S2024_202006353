@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"os/exec"
@@ -110,7 +111,7 @@ func main() {
 	}()
 
 	// Configura el manejador de la API
-	http.HandleFunc("/api-rest/ram-usage", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/ram-usage", func(w http.ResponseWriter, r *http.Request) {
 		// Permite solicitudes desde cualquier origen
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET")
@@ -125,7 +126,7 @@ func main() {
 	})
 
 	// Configura el manejador de la API para consultar el uso de CPU
-	http.HandleFunc("/api-rest/cpu-usage", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/cpu-usage", func(w http.ResponseWriter, r *http.Request) {
 		// Permite solicitudes desde cualquier origen
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET")
@@ -141,7 +142,7 @@ func main() {
 	})
 
 	// Configura el manejador de la API para consultar los procesos
-	http.HandleFunc("/api-rest/process-data", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/process-data", func(w http.ResponseWriter, r *http.Request) {
 		// Permite solicitudes desde cualquier origen
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET")
@@ -199,6 +200,8 @@ func getRamUsage() (string, error) {
 		return "", err
 	}
 
+	fmt.Println(string(output))
+
 	return string(output), nil
 }
 
@@ -245,6 +248,8 @@ func getCpuUsage() (float64, float64, error) {
 	// Redondea a 2 decimales
 	cpu_Used = float64(int(cpu_Used*100)) / 100
 	cpu_Free = float64(int(cpu_Free*100)) / 100
+
+	fmt.Println(cpu_Used, cpu_Free)
 
 	return cpu_Used, cpu_Free, nil
 }

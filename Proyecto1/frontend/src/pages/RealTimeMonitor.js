@@ -20,9 +20,10 @@ function RealTimeMonitor() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cpuResponse = await fetch("/api-rest/cpu-usage");
+        const cpuResponse = await fetch("/cpu");
         const cpuData = await cpuResponse.json();
         setCpuUsage(cpuData);
+        console.log(cpuUsage);
       } catch (error) {
         console.error("Error al consultar el endpoint:", error);
       }
@@ -35,10 +36,10 @@ function RealTimeMonitor() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api-rest/ram-usage');
+        const response = await fetch('/ram');
         const data = await response.json();
         setRamUsage(JSON.parse(data));
-        // console.log(ramUsage);
+        console.log(ramUsage);
       } catch (error) {
         console.error('Error al consultar el endpoint:', error);
       }

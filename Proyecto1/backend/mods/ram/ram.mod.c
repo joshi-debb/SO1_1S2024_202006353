@@ -2,14 +2,8 @@
 #define INCLUDE_VERMAGIC
 #include <linux/build-salt.h>
 #include <linux/elfnote-lto.h>
-#include <linux/export-internal.h>
 #include <linux/vermagic.h>
 #include <linux/compiler.h>
-
-#ifdef CONFIG_UNWINDER_ORC
-#include <asm/orc_header.h>
-ORC_HEADER;
-#endif
 
 BUILD_SALT;
 BUILD_LTO_INFO;
@@ -31,20 +25,18 @@ __section(".gnu.linkonce.this_module") = {
 MODULE_INFO(retpoline, "Y");
 #endif
 
-
-
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
-	{ 0x49c1677a, "single_open" },
+	{ 0x30ff7695, "module_layout" },
+	{ 0x83599202, "seq_read" },
+	{ 0xa81d3524, "remove_proc_entry" },
+	{ 0x92997ed8, "_printk" },
+	{ 0xb4e4d6a9, "proc_create" },
+	{ 0xa68165d, "seq_printf" },
 	{ 0x40c7247c, "si_meminfo" },
-	{ 0x73f5cdba, "seq_printf" },
-	{ 0xd7791eaf, "remove_proc_entry" },
-	{ 0xdae0ef21, "seq_read" },
-	{ 0xbdfb6dbb, "__fentry__" },
-	{ 0xf43803e8, "proc_create" },
-	{ 0x122c3a7e, "_printk" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0x6ab589bc, "module_layout" },
+	{ 0x801e8735, "single_open" },
+	{ 0xbdfb6dbb, "__fentry__" },
 };
 
 MODULE_INFO(depends, "");

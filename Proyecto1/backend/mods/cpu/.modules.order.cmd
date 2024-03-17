@@ -1,1 +1,1 @@
-savedcmd_/home/why/Desktop/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/modules.order := {   echo /home/why/Desktop/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/cpu.o; :; } > /home/why/Desktop/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/modules.order
+cmd_/home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/modules.order := {   echo /home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/cpu.ko; :; } | awk '!x[$$0]++' - > /home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/modules.order

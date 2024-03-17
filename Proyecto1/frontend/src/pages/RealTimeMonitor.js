@@ -20,7 +20,7 @@ function RealTimeMonitor() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cpuResponse = await fetch("http://localhost:8000/cpu-usage");
+        const cpuResponse = await fetch("/cpu-usage");
         const cpuData = await cpuResponse.json();
         setCpuUsage(cpuData);
       } catch (error) {
@@ -29,15 +29,13 @@ function RealTimeMonitor() {
     };
 
     const intervalId = setInterval(fetchData, 500);
-
-    // Limpia el intervalo cuando el componente se desmonta o cuando la función useEffect se ejecuta nuevamente
     return () => clearInterval(intervalId);
-  }, []); // El segundo argumento del useEffect es un array vacío para que se ejecute solo una vez al montar el componente
+  }, []); 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/ram-usage');
+        const response = await fetch('/ram-usage');
         const data = await response.json();
         setRamUsage(JSON.parse(data));
         // console.log(ramUsage);

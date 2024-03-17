@@ -38,7 +38,7 @@ type RamUsage struct {
 
 func main() {
 	// Inicializa la conexión con la base de datos
-	db, err := sql.Open("mysql", "admin:password@tcp(127.0.0.1:3306)/dbso1py1")
+	db, err := sql.Open("mysql", "admin:password@tcp(mysql:3306)/dbso1py1")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -163,7 +163,7 @@ func main() {
 	})
 
 	// Inicia el servidor
-	log.Fatal(http.ListenAndServe(":8000", nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func saveRamUsage(db *sql.DB) error {
@@ -192,7 +192,7 @@ func saveRamUsage(db *sql.DB) error {
 
 func getRamUsage() (string, error) {
 	// Ejecuta los comandos en una sesión de bash
-	cmd := exec.Command("bash", "-c", "cd /home/why && cd /proc && cat ram_so1_1s2024")
+	cmd := exec.Command("sh", "-c", "cat /proc/ram_so1_1s2024")
 
 	output, err := cmd.CombinedOutput()
 	if err != nil {
@@ -220,7 +220,7 @@ func saveCpuUsage(db *sql.DB) error {
 
 func getCpuUsage() (float64, float64, error) {
 	// Ejecuta el comando mpstat en una sesión de bash
-	cmd := exec.Command("bash", "-c", "mpstat")
+	cmd := exec.Command("sh", "-c", "mpstat")
 
 	output, err := cmd.CombinedOutput()
 	if err != nil {
@@ -302,7 +302,7 @@ func insertProcess(db *sql.DB, process Process) error {
 
 func getProcessData() (string, error) {
 	// Ejecuta los comandos en una sesión de bash
-	cmd := exec.Command("bash", "-c", "cd /home/why && cd /proc && cat cpu_so1_1s2024")
+	cmd := exec.Command("sh", "-c", "cat /proc/cpu_so1_1s2024")
 
 	output, err := cmd.CombinedOutput()
 	if err != nil {

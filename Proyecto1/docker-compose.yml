@@ -11,4 +11,32 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./datos_mysql:/var/lib/mysql
+      - volumen1:/var/lib/mysql
+
+    networks:
+      - py1_network
+
+  backend:
+    build: "./backend"
+    container_name: 'backend'
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - py1_network
+
+  frontend:
+    build: "./frontend"
+    container_name: 'frontend'
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - py1_network
+  
+networks:
+  py1_network:
+    external: true
+
+volumes:
+  volumen1:

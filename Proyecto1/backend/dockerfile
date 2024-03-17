@@ -1,0 +1,11 @@
+
+# # Etapa de producción
+FROM golang:1.16
+
+WORKDIR /backend
+
+COPY --from=build /backend/main .
+
+EXPOSE 8080
+
+CMD [ "./main" ]

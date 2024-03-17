@@ -20,7 +20,7 @@ function RealTimeMonitor() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cpuResponse = await fetch("/cpu");
+        const cpuResponse = await fetch("/api-rest/cpu-usage");
         const cpuData = await cpuResponse.json();
         setCpuUsage(cpuData);
       } catch (error) {
@@ -35,7 +35,7 @@ function RealTimeMonitor() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/ram');
+        const response = await fetch('/api-rest/ram-usage');
         const data = await response.json();
         setRamUsage(JSON.parse(data));
         // console.log(ramUsage);

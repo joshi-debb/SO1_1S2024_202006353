@@ -15,16 +15,16 @@ function RealTimeMonitor() {
 
   const [ramUsage, setRamUsage] = useState('');
 
-  const [cpuUsage, setCpuUsage] = useState('');
+  const [cpuUsage, setCpuUsage] = useState({ cpu_used: 0, cpu_free: 0 });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/process-data');
-        const data = await response.json();
-        setCpuUsage(JSON.parse(data));
+        const cpuResponse = await fetch("http://localhost:8000/cpu-usage");
+        const cpuData = await cpuResponse.json();
+        setCpuUsage(cpuData);
       } catch (error) {
-        console.error('Error al consultar el endpoint:', error);
+        console.error("Error al consultar el endpoint:", error);
       }
     };
 
@@ -40,7 +40,7 @@ function RealTimeMonitor() {
         const response = await fetch('http://localhost:8000/ram-usage');
         const data = await response.json();
         setRamUsage(JSON.parse(data));
-        console.log(ramUsage);
+        // console.log(ramUsage);
       } catch (error) {
         console.error('Error al consultar el endpoint:', error);
       }
@@ -68,7 +68,7 @@ function RealTimeMonitor() {
           'rgba(255, 99, 132, 1)',
           'rgba(54, 162, 235, 1)'
         ],
-        borderWidth: 1,
+        borderWidth: 2,
       },
     ],
   };
@@ -77,8 +77,8 @@ function RealTimeMonitor() {
     labels: ['Used', 'Free'],
     datasets: [
       {
-        label: 'RAM',
-        data: [102, 1000],
+        label: 'CPU',
+        data: [cpuUsage.cpu_used, cpuUsage.cpu_free],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)'
@@ -87,7 +87,7 @@ function RealTimeMonitor() {
           'rgba(255, 99, 132, 1)',
           'rgba(54, 162, 235, 1)'
         ],
-        borderWidth: 1,
+        borderWidth: 2,
       },
     ],
   };

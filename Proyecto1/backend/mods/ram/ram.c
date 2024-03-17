@@ -21,7 +21,7 @@ static int escribir_a_proc(struct seq_file *file_proc, void *v)
     used = inf.freeram * inf.mem_unit + inf.bufferram * inf.mem_unit + inf.sharedram * inf.mem_unit;
     porc = (used * 100) / total;
     notused = total - used;
-    seq_printf(file_proc, "{\"total\":%lu, \"used\":%lu, \"percent\":%lu, \"free\":%lu }", total, used, porc, notused);
+    seq_printf(file_proc, "{\"used\":%lu,\"free\":%lu }", used, notused);
     return 0;
 }
 

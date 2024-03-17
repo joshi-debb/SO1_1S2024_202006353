@@ -4,8 +4,19 @@ import React, { useState, useEffect } from 'react';
 const ProcessTree = () => {
 
   return (
-    <div style={{ width: '100%', height: '500px' }}>
-      <h1>Árbol de Procesos</h1>  
+    <div className="container">
+      <div className="navbar2">
+        <h1 className="custom-color2">PROCESS TREE</h1>
+      </div>
+      <div className='graphics-content'>
+
+        
+
+
+
+      </div>
+
+
     </div>
   );
 };

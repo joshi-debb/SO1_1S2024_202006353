@@ -110,7 +110,7 @@ func main() {
 	}()
 
 	// Configura el manejador de la API
-	http.HandleFunc("/ram-usage", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/api-rest/ram-usage", func(w http.ResponseWriter, r *http.Request) {
 		// Permite solicitudes desde cualquier origen
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET")
@@ -125,7 +125,7 @@ func main() {
 	})
 
 	// Configura el manejador de la API para consultar el uso de CPU
-	http.HandleFunc("/cpu-usage", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/api-rest/cpu-usage", func(w http.ResponseWriter, r *http.Request) {
 		// Permite solicitudes desde cualquier origen
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET")
@@ -141,7 +141,7 @@ func main() {
 	})
 
 	// Configura el manejador de la API para consultar los procesos
-	http.HandleFunc("/process-data", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/api-rest/process-data", func(w http.ResponseWriter, r *http.Request) {
 		// Permite solicitudes desde cualquier origen
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET")

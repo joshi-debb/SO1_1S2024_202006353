@@ -36,7 +36,7 @@ services:
   
 networks:
   py1_network:
-    external: true
+    
 
 volumes:
   volumen1:

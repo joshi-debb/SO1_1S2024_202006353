@@ -38,7 +38,7 @@ type RamUsage struct {
 
 func main() {
 	// Inicializa la conexión con la base de datos
-	db, err := sql.Open("mysql", "admin:password@tcp(mydb:3306)/dbso1py1")
+	db, err := sql.Open("mysql", "admin:password@tcp(mydb:3306)/db_so1py1")
 	if err != nil {
 		log.Fatal(err)
 	}

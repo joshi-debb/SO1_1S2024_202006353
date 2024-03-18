@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: MyPass123
-      MYSQL_DATABASE: dbso1py1
+      MYSQL_DATABASE: db_so1py1
       MYSQL_USER: admin
       MYSQL_PASSWORD: password
     ports:
@@ -15,7 +15,7 @@ services:
 
   api:
     build: "./backend"
-    container_name: 'backend'
+    container_name: 'backend_so1py1'
     restart: always
     ports:
       - "8080:8080"
@@ -23,20 +23,28 @@ services:
       - mydb
     links:
       - mydb
+    networks:
+      - mynet
 
 
   front:
     build: "./frontend"
-    container_name: 'frontend'
+    container_name: 'frontend_so1py1'
     ports:
       - "80:80"
     restart: always
     depends_on:
       - api
+    networks:
+      - mynet
 
 
   volumes:
     mydb_data:
       external: false
+  
+networks:
+  mynet:
+    external: true
 
 

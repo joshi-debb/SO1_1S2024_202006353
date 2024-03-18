@@ -12,6 +12,8 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
+    volumes:
+      - mydb_data:/var/lib/mysql
 
   api:
     build: "./backend"

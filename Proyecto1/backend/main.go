@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"log"
 	"net/http"
 	"os/exec"
@@ -39,7 +38,7 @@ type RamUsage struct {
 
 func main() {
 	// Inicializa la conexión con la base de datos
-	db, err := sql.Open("mysql", "admin:password@tcp(mysql:3306)/dbso1py1")
+	db, err := sql.Open("mysql", "admin:password@tcp(mydb:3306)/dbso1py1")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -200,8 +199,6 @@ func getRamUsage() (string, error) {
 		return "", err
 	}
 
-	fmt.Println(string(output))
-
 	return string(output), nil
 }
 
@@ -248,8 +245,6 @@ func getCpuUsage() (float64, float64, error) {
 	// Redondea a 2 decimales
 	cpu_Used = float64(int(cpu_Used*100)) / 100
 	cpu_Free = float64(int(cpu_Free*100)) / 100
-
-	fmt.Println(cpu_Used, cpu_Free)
 
 	return cpu_Used, cpu_Free, nil
 }
@@ -313,8 +308,6 @@ func getProcessData() (string, error) {
 	if err != nil {
 		return "", err
 	}
-
-	// fmt.Println(string(output))
 
 	return string(output), nil
 }

@@ -1,4 +1,6 @@
+
 version: '3'
+
 services:
   mydb:
     image: mysql:latest
@@ -10,32 +12,31 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
-#     volumes:
-#       - volumen1:/var/lib/mysql
-#     networks:
-#       - py1_network
 
-#   api:
-#     build: "./backend"
-#     container_name: 'backend'
-#     restart: always
-#     ports:
-#       - "8080:8080"
-#     networks:
-#       - py1_network
+  api:
+    build: "./backend"
+    container_name: 'backend'
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mydb
+    links:
+      - mydb
 
-#   front:
-#     build: "./frontend"
-#     container_name: 'frontend'
-#     restart: always
-#     ports:
-#       - "80:80"
-#     networks:
-#       - py1_network
 
-# networks:
-#   py1_network:
-#     external: true
+  front:
+    build: "./frontend"
+    container_name: 'frontend'
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - api
 
-# volumes:
-#   volumen1:
+
+  volumes:
+    mydb_data:
+      external: false
+
+

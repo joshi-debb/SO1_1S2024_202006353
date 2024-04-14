@@ -24,15 +24,15 @@ const (
 )
 
 type Data struct {
-	Name    string
-	Album	string
-	Year 	string
-	Rank  	string
+	Name  string
+	Album string
+	Year  string
+	Rank  string
 }
 
 func mysqlConnect() {
 	// Cambia las credenciales según tu configuración de MySQL
-	dsn := "root:secret@tcp(localhost:3306)/clase9"
+	dsn := "root:Buffalo2503+@tcp(34.145.245.153:3306)/tarea4"
 
 	var err error
 	db, err = sql.Open("mysql", dsn)
@@ -52,7 +52,7 @@ func (s *server) ReturnInfo(ctx context.Context, in *pb.RequestId) (*pb.ReplyInf
 	fmt.Println("Recibí de cliente: ", in.GetName())
 	data := Data{
 		Name:  in.GetName(),
-		Album: in.getAlbum(),
+		Album: in.GetAlbum(),
 		Year:  in.GetYear(),
 		Rank:  in.GetRank(),
 	}
@@ -63,8 +63,8 @@ func (s *server) ReturnInfo(ctx context.Context, in *pb.RequestId) (*pb.ReplyInf
 
 func insertMySQL(band Data) {
 	// Prepara la consulta SQL para la inserción en MySQL
-	query := "INSERT INTO band (name, album, year, rank) VALUES (?, ?, ?, ?)"
-	_, err := db.ExecContext(ctx, query, band.name, band.album, band.year, band.rank)
+	query := "INSERT INTO band (name, album, years, ranks) VALUES (?, ?, ?, ?)"
+	_, err := db.ExecContext(ctx, query, band.Name, band.Album, band.Year, band.Rank)
 	if err != nil {
 		log.Println("Error al insertar en MySQL:", err)
 	}

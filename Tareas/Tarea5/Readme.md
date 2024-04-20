@@ -38,7 +38,7 @@ Automatizaci√≥n: Strimzi automatiza muchas de las tareas asociadas con la gesti√
 
 #### Captura de asistencia a la conferencia:
 
-
+![Screenshot 2024-04-12 155133](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/92de4d65-efa2-4c63-8db3-62e0e817e7bc)
 
 
  

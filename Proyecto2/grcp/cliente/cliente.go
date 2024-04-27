@@ -73,7 +73,7 @@ func main() {
 
 	app.Post("/grpc/insert", insertData)
 
-	err := app.Listen(":3000")
+	err := app.Listen(":3002")
 	if err != nil {
 		return
 	}

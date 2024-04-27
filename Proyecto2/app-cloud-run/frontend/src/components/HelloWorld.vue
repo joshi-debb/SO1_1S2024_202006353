@@ -17,7 +17,9 @@ export default {
   methods: {
     async obtenerUltimosIngresos() {
       try {
-        const response = await axios.get('http://localhost:5000/data');
+        const response = await axios.get('https://backend-apicr-s3wmansxxq-uk.a.run.app/data');
+
+        // const response = await axios.get('http://localhost:8000/data');
         //const response = await axios.get('/api-rest/data');
         this.datos = this.formatoDatos(response.data);
       } catch (error) {
@@ -40,3 +42,7 @@ export default {
   }
 }
 </script>
+
+
+
+

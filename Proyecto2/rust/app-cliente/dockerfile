@@ -5,9 +5,9 @@ RUN cargo build --release
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y libssl-dev
 COPY --from=builder /usr/src/app/target/release/app-cliente /usr/local/bin/app-cliente
-EXPOSE 8000
+EXPOSE 5000
 CMD ["app-cliente"]
 
 # docker build -t bekinggo/app_cliente .
 # docker push bekinggo/app_cliente
-# docker run -p 8000:8000 bekinggo/app_cliente
+# docker run -p 5000:5000 bekinggo/app_cliente

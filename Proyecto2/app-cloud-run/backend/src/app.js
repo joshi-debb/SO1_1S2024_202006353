@@ -4,11 +4,11 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const app = express();
-const PORT = 5000;
+const PORT = 8000;
 
 // Conexión a la base de datos MongoDB
 // mongoose.connect('mongodb://mongodb:27017/ejemplo_database', {
-mongoose.connect('mongodb://34.136.173.161:27017/so1py2', {
+mongoose.connect('mongodb://34.41.68.81:27017/so1py2', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {

@@ -20,11 +20,11 @@ RUN apt-get update && apt-get install -y libssl-dev
 COPY --from=builder /usr/src/app/target/release/app-servidor /usr/local/bin/app-servidor
 
 # Exponer el puerto que utiliza tu aplicación
-EXPOSE 8080
+EXPOSE 5050
 
 # Comando para ejecutar tu aplicación cuando se inicie el contenedor
 CMD ["app-servidor"]
 
 # docker build -t bekinggo/app_server .
 # docker push bekinggo/app_server
-# docker run -p 8080:8080 bekinggo/app_server
+# docker run -p 5050:5050 bekinggo/app_server

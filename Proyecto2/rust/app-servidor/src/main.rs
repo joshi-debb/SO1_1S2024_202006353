@@ -33,7 +33,7 @@ async fn main() {
 
     let config = rocket::Config {
         address: "0.0.0.0".parse().unwrap(),
-        port: 8080,
+        port: 5050,
         secret_key: secret_key.unwrap(), // Desempaqueta la clave secreta generada
         ..rocket::Config::default()
     };

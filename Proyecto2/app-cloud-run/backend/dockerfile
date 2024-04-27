@@ -1,0 +1,18 @@
+# Define la imagen base de Node.js 18.16.0 en su versión "alpine"
+FROM node:18.16.0-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["node", "src/app.js"]
+
+# docker build -t bekinggo/backend-apicr .
+# docker push bekinggo/backend-apicr
+# docker run -p 80:80 bekinggo/backend-apicr

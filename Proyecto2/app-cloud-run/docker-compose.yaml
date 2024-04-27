@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend:
+    image: "bekinggo/backend-apicr"
+    container_name: 'backend-apicr'
+    ports:
+      - "2024:2024"
+  front:
+    image: 'bekinggo/frontend-apicr'
+    container_name: 'frontend-apicr'
+    ports:
+      - '3000:3000'

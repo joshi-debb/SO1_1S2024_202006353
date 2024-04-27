@@ -14,12 +14,12 @@ COPY . .
 # Compila la aplicación
 RUN go build cliente.go
 
-# Expone el puerto 3000
-EXPOSE 3000
+# Expone el puerto 3002
+EXPOSE 3002
 
 # Comando para ejecutar la aplicación
 CMD ["./cliente"]
 
 # docker build -t bekinggo/grpc_client .
 # docker push bekinggo/grpc_client
-# docker run -p 3000:3000 bekinggo/grpc_client
+# docker run -p 3002:3002 bekinggo/grpc_client

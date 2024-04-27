@@ -16,8 +16,8 @@ struct Data {
 #[post("/send_data", data = "<data>")]
 async fn send_data(data: Json<Data>) -> String {
     let client = Client::new();
-    //let server_url = "http://app_server:8080/data";
-    let server_url = "http://localhost:8080/data";
+    //let server_url = "http://app_server:5050/data";
+    let server_url = "http://localhost:5050/data";
     let response = client.post(server_url).json(&data.into_inner()).send().await;
 
     match response {
@@ -39,7 +39,7 @@ async fn main() {
 
     let config = rocket::Config {
         address: "0.0.0.0".parse().unwrap(),
-        port: 8000,
+        port: 5000,
         secret_key: secret_key.unwrap(), // Desempaqueta la clave secreta generada
         ..rocket::Config::default()
     };

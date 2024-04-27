@@ -1,0 +1,26 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: daemon-consumer
+  name: daemon-consumer
+  namespace: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: daemon-consumer
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: daemon-consumer
+    spec:
+      containers:
+      - image: bekinggo/daemon-consumer
+        name: daemon-consumer
+        resources: {}
+status: {}

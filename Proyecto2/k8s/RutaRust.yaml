@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rust-ruta
-  namespace: so1-p2
+  namespace: kafka
 spec:
   selector:
     matchLabels:
@@ -16,11 +16,11 @@ spec:
     spec:
       containers:
       - name: rust-cliente
-        image: jhonathantocay/app_cliente 
+        image: bekinggo/app_cliente 
         ports:
         - containerPort: 8000
       - name: rust-server
-        image: jhonathantocay/app_server
+        image: bekinggo/app_server
         ports:
         - containerPort: 8080
 ---
@@ -28,6 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: service-rust
+  namespace: kafka
 spec:
   type: LoadBalancer
   ports:

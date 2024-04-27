@@ -6,17 +6,17 @@ use rocket_cors::{AllowedOrigins, CorsOptions};
 
 #[derive(rocket::serde::Deserialize)]
 struct Data {
-    sede: String,
-    municipio: String,
-    departamento: String,
-    partido: String,
+    name: String,
+    album: String,
+    year: String,
+    rank: String,
 }
 
 #[rocket::post("/data", data = "<data>")]
 fn receive_data(data: Json<Data>) -> Result<String, BadRequest<String>> {
     let received_data = data.into_inner();
     let response = JsonValue::from(json!({
-        "message": format!("Received data: Sede: {}, Municipio: {}, Departamento: {}, Partido: {}", received_data.sede, received_data.municipio, received_data.departamento, received_data.partido)
+        "message": format!("Received data: name: {}, album: {}, year: {}, rank: {}", received_data.name, received_data.album, received_data.year, received_data.rank)
     }));
     Ok(response.to_string())
 }

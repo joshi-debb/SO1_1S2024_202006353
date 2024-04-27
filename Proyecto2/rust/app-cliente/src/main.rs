@@ -7,10 +7,10 @@ use rocket_cors::{AllowedOrigins, CorsOptions};
 
 #[derive(Debug, Serialize, Deserialize)]
 struct Data {
-    sede: String,
-    municipio: String,
-    departamento: String,
-    partido: String,
+    name: String,
+    album: String,
+    year: String,
+    rank: String,
 }
 
 #[post("/send_data", data = "<data>")]

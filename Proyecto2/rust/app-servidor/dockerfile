@@ -17,14 +17,14 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y libssl-dev
 
 # Copia el binario compilado desde la imagen de compilación a la imagen final
-COPY --from=builder /usr/src/app/target/release/rust-server /usr/local/bin/rust-server
+COPY --from=builder /usr/src/app/target/release/app-servidor /usr/local/bin/app-servidor
 
 # Exponer el puerto que utiliza tu aplicación
 EXPOSE 8080
 
 # Comando para ejecutar tu aplicación cuando se inicie el contenedor
-CMD ["rust-server"]
+CMD ["app-servidor"]
 
-# docker build -t bekinggo/rust_server .
-# docker push bekinggo/rust_server
-# docker run -p 8080:8080 bekinggo/rust_server
+# docker build -t bekinggo/app_server .
+# docker push bekinggo/app_server
+# docker run -p 8080:8080 bekinggo/app_server

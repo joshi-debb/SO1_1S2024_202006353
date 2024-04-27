@@ -1,10 +1,11 @@
 package main
 
 import (
-	pb "cliente/proto" // nombre_proyecto/carpeta
 	"context"
 	"fmt"
 	"log"
+
+	pb "cliente/proto"
 
 	"github.com/gofiber/fiber/v2"
 	"google.golang.org/grpc"
@@ -33,6 +34,7 @@ func insertData(c *fiber.Ctx) error {
 		Rank:  data["rank"],
 	}
 
+	// Enviar datos al servidor gRPC
 	go sendServer(band)
 	return nil
 }
@@ -42,16 +44,11 @@ func sendServer(band Data) {
 	if err != nil {
 		log.Fatalln(err)
 	}
+	defer conn.Close()
 
 	cl := pb.NewGetInfoClient(conn)
-	defer func(conn *grpc.ClientConn) {
-		err := conn.Close()
-		if err != nil {
-			log.Fatalln(err)
-		}
-	}(conn)
 
-	ret, err := cl.ReturnInfo(ctx, &pb.RequestId{
+	_, err = cl.ReturnInfo(ctx, &pb.RequestId{
 		Name:  band.Name,
 		Album: band.Album,
 		Year:  band.Year,
@@ -61,7 +58,8 @@ func sendServer(band Data) {
 		log.Fatalln(err)
 	}
 
-	fmt.Println("Respuesta del server " + ret.GetInfo())
+	// Registro de mensaje en el cliente
+	fmt.Println("Datos enviados al servidor:", band)
 }
 
 func main() {
@@ -72,6 +70,7 @@ func main() {
 			"res": "todo bien",
 		})
 	})
+
 	app.Post("/grpc/insert", insertData)
 
 	err := app.Listen(":3000")

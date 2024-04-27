@@ -8,7 +8,7 @@ const PORT = 5000;
 
 // Conexión a la base de datos MongoDB
 // mongoose.connect('mongodb://mongodb:27017/ejemplo_database', {
-mongoose.connect('mongodb://34.136.173.161:27017/so1-py2', {
+mongoose.connect('mongodb://34.136.173.161:27017/so1py2', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
@@ -26,7 +26,7 @@ const Schema = mongoose.Schema;
 const ExampleSchema = new Schema({
   log: String
 });
-const ExampleModel = mongoose.model('Example', ExampleSchema);
+const ExampleModel = mongoose.model('bands', ExampleSchema);
 
 // Ruta para ingresar un nuevo dato
 

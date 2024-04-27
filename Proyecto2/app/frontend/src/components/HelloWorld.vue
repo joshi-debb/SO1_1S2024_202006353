@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="obtenerUltimosIngresos">Update</button>
-    <textarea v-model="datos" rows="10" cols="50" readonly></textarea>
+    <textarea v-model="datos" placeholder="Presiona 'Update' para actualizar Logs" rows="10" cols="110" readonly></textarea>
   </div>
 </template>
 
@@ -25,8 +25,18 @@ export default {
       }
     },
     formatoDatos(data) {
-      return data.map(dato => `> ${JSON.stringify(dato.log)}\n`).join('');
-    }
+  return data.map(dato => {
+    // Imprimir la fecha recibida antes de intentar formatearla
+    console.log('Fecha recibida:', dato.timestamp);
+    // Convertir la fecha de formato MongoDB a un objeto Date de JavaScript
+    const fecha = new Date(dato.timestamp);
+    // Formatear la fecha y hora
+    const fechaFormateada = fecha.toLocaleString();
+    const mensaje = dato.message;
+    const datos = JSON.stringify(dato.data);
+    return `${fechaFormateada}, ${mensaje}, ${datos}\n`;
+  }).join('');
+}
   }
 }
 </script>

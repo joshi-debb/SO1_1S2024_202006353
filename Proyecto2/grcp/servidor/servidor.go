@@ -109,24 +109,13 @@ func insertMongoDB(log Log) {
 }
 
 func insertRedis(data Data) {
-	// Obtener el valor autoincremental actual o establecerlo en 0 si no existe
-	id, err := rdb.Incr(ctx, "data_counter").Result()
-	if err != nil {
-		fmt.Println("Error al generar el ID autoincremental:", err)
-		return
-	}
-
-	// Convertir la estructura Data en una cadena de texto
-	value := fmt.Sprintf("Name:%s, Album:%s, Year:%s, Rank:%s", data.Name, data.Album, data.Year, data.Rank)
-
-	// Construir la clave usando el ID autoincremental
-	key := fmt.Sprintf("data:%d", id)
-
 	// Almacenar el valor en Redis
-	_, err = rdb.HSet(ctx, "data", key, value).Result()
+	result, err := rdb.HIncrBy(ctx, "data", data.Name, 1).Result()
 	if err != nil {
 		fmt.Println("Error al insertar en Redis:", err)
+		return
 	}
+	fmt.Println("Valor almacenado en Redis:", result)
 }
 
 func main() {

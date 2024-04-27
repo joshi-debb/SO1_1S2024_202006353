@@ -1,0 +1,17 @@
+# Etapa de construcción
+FROM node:16 as builder
+
+WORKDIR /app
+
+COPY package.json ./
+COPY package-lock.json ./
+
+RUN npm install
+
+COPY . ./ 
+
+# Exponemos el puerto 80
+EXPOSE 80
+
+# Comando para iniciar la aplicación Node.js
+CMD ["node", "src/app.js"]

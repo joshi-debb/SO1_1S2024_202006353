@@ -1,9 +1,9 @@
 
-Laboratorio de sistemas operativos 
+**Laboratorio de sistemas operativos 1**
 
-Proyecto No. 2
+**Proyecto No. 2**
 
-Juan Josue Zuleta Beb - 202006353
+**Juan Josue Zuleta Beb - 202006353**
 
 ## Introducción
 
@@ -11,7 +11,7 @@ En este proyecto, el objetivo principal es desarrollar un sistema de votación p
 
 ## Objetivos
 
-Dxiseñar y desarrollar una arquitectura de software distribuida, donde las distintas funcionalidades del sistema se descomponen en pequeños servicios independientes, conocidos como microservicios.
+Diseñar y desarrollar una arquitectura de software distribuida, donde las distintas funcionalidades del sistema se descomponen en pequeños servicios independientes, conocidos como microservicios.
 
 Utilizar sistemas de mensajería para gestionar la comunicación entre los distintos componentes del sistema de forma asíncrona y desacoplada.
 
@@ -19,17 +19,17 @@ Mostrar de manera visual y dinámica diferentes métricas, estadísticas y datos
 
 ## Tecnologías y servicios utilizados
 
-**Google Cloud Platform (GCP):*** Una plataforma de computación en la nube que ofrece servicios para construir, implementar y escalar aplicaciones eficientemente.
+***Google Cloud Platform (GCP):*** Una plataforma de computación en la nube que ofrece servicios para construir, implementar y escalar aplicaciones eficientemente.
 
-**Kubernetes:*** Herramienta de orquestación de contenedores que automatiza el despliegue, escalado y gestión de aplicaciones distribuidas.
+***Kubernetes:*** Herramienta de orquestación de contenedores que automatiza el despliegue, escalado y gestión de aplicaciones distribuidas.
 
-**Kafka:*** Plataforma de streaming distribuida utilizada para sistemas de mensajería y procesamiento de datos en tiempo real.
+***Kafka:*** Plataforma de streaming distribuida utilizada para sistemas de mensajería y procesamiento de datos en tiempo real.
 
 ***Nginx:*** Servidor web de código abierto utilizado como proxy inverso, balanceador de carga y caché web, conocido por su alto rendimiento y flexibilidad.
 
-**Cloud Run:*** Servicio administrado que permite ejecutar contenedores sin servidor de manera fácil y rápida, gestionando la infraestructura subyacente automáticamente.
+***Cloud Run:*** Servicio administrado que permite ejecutar contenedores sin servidor de manera fácil y rápida, gestionando la infraestructura subyacente automáticamente.
 
-**Ingress:*** Recurso para gestionar el acceso externo a los servicios dentro del clúster Kubernetes, facilitando el enrutamiento y control de tráfico.
+***Ingress:*** Recurso para gestionar el acceso externo a los servicios dentro del clúster Kubernetes, facilitando el enrutamiento y control de tráfico.
 
 ***Locust:*** Herramienta de código abierto para pruebas de carga y estrés en aplicaciones web, simula usuarios concurrentes para evaluar el rendimiento.
 

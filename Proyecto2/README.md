@@ -1,8 +1,4 @@
 
-<div style="text-align:center">
-  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/c5b47357-d93e-43ce-a3ca-97a5ff1b3495" alt="logo">
-</div>
-
 Laboratorio de sistemas operativos 
 
 Proyecto No. 2

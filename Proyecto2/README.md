@@ -3,7 +3,6 @@
   <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/c5b47357-d93e-43ce-a3ca-97a5ff1b3495" alt="logo">
 </div>
 
-
 Laboratorio de sistemas operativos 
 
 Proyecto No. 2
@@ -22,77 +21,105 @@ Utilizar sistemas de mensajería para gestionar la comunicación entre los disti
 
 Mostrar de manera visual y dinámica diferentes métricas, estadísticas y datos relevantes del sistema, lo que facilitando la monitorización, el análisis y la toma de decisiones basadas en datos.
 
-## Tecnologías utilizadas
+## Tecnologías y servicios utilizados
 
-***Google Cloud Platform (GCP):***
-Es una plataforma de computación en la nube que ofrece una amplia gama de servicios para ayudar a las organizaciones a construir, implementar y escalar aplicaciones de manera eficiente. Algunos de los servicios clave incluyen Google Compute Engine para máquinas virtuales, Google Cloud Storage para almacenamiento de objetos, Google Kubernetes.
+**Google Cloud Platform (GCP):*** Una plataforma de computación en la nube que ofrece servicios para construir, implementar y escalar aplicaciones eficientemente.
 
-***Kubernetes:***
-Es una herramienta de orquestación de contenedores de código abierto desarrollada por Google. Permite automatizar el despliegue, escalado y gestión de aplicaciones en contenedores. Kubernetes abstrae la infraestructura subyacente y proporciona una plataforma para definir y desplegar aplicaciones distribuidas. Utiliza conceptos como pods, servicios y controladores para facilitar la administración de contenedores en entornos de producción.
+**Kubernetes:*** Herramienta de orquestación de contenedores que automatiza el despliegue, escalado y gestión de aplicaciones distribuidas.
 
-***Kafka:***
-Apache Kafka es una plataforma de streaming distribuida de código abierto utilizada para la construcción de sistemas de mensajería y procesamiento de datos en tiempo real. Kafka está diseñado para manejar grandes volúmenes de datos y proporciona una arquitectura escalable y tolerante a fallos. Permite la publicación y suscripción de flujos de datos en tiempo real, lo que facilita la integración entre aplicaciones y el procesamiento de eventos en tiempo real.
+**Kafka:*** Plataforma de streaming distribuida utilizada para sistemas de mensajería y procesamiento de datos en tiempo real.
 
-***Nginx:***
-Es un servidor web de código abierto que también se puede utilizar como proxy inverso, balanceador de carga y caché web. Es conocido por su alto rendimiento, escalabilidad y capacidades de configuración flexible. Nginx se utiliza comúnmente como un frontend para servidores web y aplicaciones, proporcionando una capa de abstracción entre los clientes y los servidores backend.
+***Nginx:*** Servidor web de código abierto utilizado como proxy inverso, balanceador de carga y caché web, conocido por su alto rendimiento y flexibilidad.
 
-***Cloud Run:***
-Es un servicio completamente administrado de Google Cloud Platform que permite ejecutar contenedores sin servidor de manera fácil y rápida. Cloud Run administra la infraestructura subyacente, permitiendo a los desarrolladores centrarse en el desarrollo de aplicaciones. Con Cloud Run, los contenedores se escalan automáticamente según la demanda, lo que permite una implementación rápida y eficiente de aplicaciones basadas en contenedores.
+**Cloud Run:*** Servicio administrado que permite ejecutar contenedores sin servidor de manera fácil y rápida, gestionando la infraestructura subyacente automáticamente.
 
-***Ingress:***
-Es un recurso que gestiona el acceso externo a los servicios dentro del clúster. Permite exponer servicios HTTP y HTTPS en la parte frontal del clúster y proporciona funciones avanzadas de enrutamiento y control de tráfico. Ingress se utiliza comúnmente para enrutar el tráfico web a aplicaciones desplegadas en Kubernetes y para proporcionar funciones de balanceo de carga y terminación SSL.
+**Ingress:*** Recurso para gestionar el acceso externo a los servicios dentro del clúster Kubernetes, facilitando el enrutamiento y control de tráfico.
 
-***Locust:***
-Es una herramienta de código abierto para realizar pruebas de carga y estrés en aplicaciones web. Permite simular miles de usuarios concurrentes para evaluar el rendimiento y la escalabilidad de una aplicación. Locust se utiliza comúnmente para identificar cuellos de botella y problemas de rendimiento en aplicaciones web antes de desplegarlas en entornos de producción.
+***Locust:*** Herramienta de código abierto para pruebas de carga y estrés en aplicaciones web, simula usuarios concurrentes para evaluar el rendimiento.
 
-***Redis:***
-Es una base de datos en memoria de código abierto que se utiliza como almacén de datos en caché, almacén de sesiones y para otros casos de uso donde se requiere acceso rápido a los datos. Redis es conocido por su alto rendimiento, escalabilidad y capacidades avanzadas de estructuras de datos, como listas, conjuntos, hashes y conjuntos ordenados.
+***Redis:*** Base de datos en memoria utilizada como almacén de datos en caché y para otros casos donde se requiere acceso rápido a los datos.
 
-***MongoDB:***
-Es una base de datos NoSQL de código abierto que utiliza un modelo de documentos en lugar de un modelo de tablas relacional. Es altamente escalable y flexible, lo que lo hace adecuado para una amplia variedad de aplicaciones. MongoDB se utiliza comúnmente para almacenar datos semi-estructurados y no relacionales, como documentos JSON, registros de eventos y datos de sensor.
+***MongoDB:*** Base de datos NoSQL de código abierto con un modelo de documentos, altamente escalable y flexible.
 
-***Grafana:***
-Grafana es una plataforma de análisis y visualización de datos de código abierto que se utiliza para crear paneles de control interactivos y gráficos basados en datos de diversas fuentes. Permite monitorizar y analizar métricas en tiempo real, realizar análisis históricos y crear visualizaciones personalizadas. Grafana es ampliamente utilizado en operaciones de TI, desarrollo de aplicaciones y análisis de datos para proporcionar información en tiempo real sobre el rendimiento del sistema y las tendencias de datos.
+***Grafana:*** Plataforma de análisis y visualización de datos utilizada para crear paneles de control interactivos y gráficos basados en datos de diversas fuentes.
 
-***Producers (gRPC, WASM):***
-En este contexto, los "producers" son componentes o servicios que generan y envían datos o mensajes a otros sistemas. gRPC es un sistema de llamada a procedimientos remotos de código abierto que facilita la comunicación entre servicios distribuidos utilizando protocolos como HTTP/2 y serialización de datos gRPC. WebAssembly (WASM) es un estándar web que permite ejecutar código de alto rendimiento escrito en otros lenguajes, como C++ o Rust, dentro del navegador web.
+***Producers (gRPC, WASM):*** Componentes que generan y envían datos, utilizando gRPC para la comunicación entre servicios y WebAssembly para ejecutar código de alto rendimiento en el navegador web.
 
-***Consumers (daemon en Go con rutinas de Go):***
-En contraste con los "producers", los "consumers" son componentes o servicios que reciben y procesan datos o mensajes generados por los productores. En este caso, se menciona un "daemon" (un proceso en segundo plano) escrito en el lenguaje de programación Go, que utiliza rutinas (goroutines) de Go para manejar la concurrencia de manera eficiente. Esto permite que el consumidor pueda manejar grandes volúmenes de datos de manera eficiente y escalable.
+***Consumers (daemon en Go con rutinas de Go):*** Componentes que reciben y procesan datos, utilizando un daemon escrito en Go con rutinas para manejar la concurrencia eficientemente.
 
-***Docker:***
-Es una plataforma de código abierto que permite a los desarrolladores empaquetar, distribuir y ejecutar aplicaciones en contenedores. Los contenedores son entornos ligeros y portátiles que contienen todo lo necesario para ejecutar una aplicación, incluidas las bibliotecas, dependencias y configuraciones. Docker simplifica el proceso de desarrollo, implementación y escalado de aplicaciones al proporcionar un entorno consistente y aislado para ejecutar aplicaciones en diferentes entornos.
+***Docker:*** Plataforma que permite empaquetar, distribuir y ejecutar aplicaciones en contenedores, simplificando el desarrollo, implementación y escalado de aplicaciones.
 
-***Docker Hub:***
-Es un servicio en la nube proporcionado por Docker que permite a los desarrolladores compartir y distribuir imágenes de contenedores. Las imágenes de contenedores son plantillas preconfiguradas que contienen todo lo necesario para ejecutar una aplicación en un contenedor Docker. Docker Hub actúa como un repositorio centralizado de imágenes de contenedores, donde los desarrolladores pueden buscar, descargar y compartir imágenes públicas, así como almacenar imágenes privadas para uso interno.
+***Docker Hub:*** Servicio en la nube para compartir y distribuir imágenes de contenedores, actuando como un repositorio centralizado de imágenes públicas y privadas.
+
 
 ## Deployments y Services de K8S
 
 <div style="text-align:center">
-  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/dab86ab3-e1b0-441b-9d26-b43cf1ca1a77" alt="Services">
+  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/be6edf8d-25d9-43b9-b80d-c8f5d237ec29" alt="Services">
 </div>
+
 ## Ejemplo de funcionamiento
 
-![Screenshot from 2024-04-29 10-18-06](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/1f19de30-ae15-410f-b561-7d21e879f787)
+- Primero generamos trafico por medio de loctus en python
 
-![Screenshot from 2024-04-29 10-20-12](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/4713ab7c-31d5-4d6e-bd21-c6d4362f888b)
+</div style="text-align:center">
+  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/b962b7d1-8fad-440e-b4fb-4991e2e8b835"
+  alt="service1">
+</div>
 
-![Screenshot from 2024-04-29 10-20-25](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/e9f37678-bb82-4e68-a143-9db010344e06)
+- Por medio de la pagina de loctus enviamos el trafico a la ip del servicio de gRPC
 
-![Screenshot from 2024-04-29 10-20-33](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/a708860e-d8c9-4781-8159-cae07348fc56)
+</div style="text-align:center">
+  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/73f2428e-5786-4118-bd17-859ca2a178af"
+  alt="service2">
+</div>
 
-![Screenshot from 2024-04-29 10-20-58](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/c0fbde1d-fa71-49a5-87e3-9da880dd265a)
+- Verificamos que el trafico se este enviando correctamente
 
-![Screenshot from 2024-04-29 10-21-05](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/3dfc3065-8cd0-4126-bc6e-8c1430201053)
+</div style="text-align:center">
+  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/6d4e0851-0ef8-43e6-a3aa-015eb257fcb6"
+  alt="service4">
+</div>
 
-![Screenshot from 2024-04-29 10-21-35](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/25fd7e03-c12a-4f24-a469-e9c94df0af12)
+- Consultamos el Dashboard de Grafana para visualizar las métricas y estadísticas en tiempo real
 
-![Screenshot from 2024-04-29 10-22-40](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/bb38e178-2692-4267-8a6c-7668012c7990)
+</div style="text-align:center">
+  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/7c79edc8-06a8-4c2f-a030-c2f9c82bebe3"
+  alt="service7">
+</div>
 
-![Screenshot from 2024-04-29 10-22-52](https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/101218a3-e9fc-4bd1-99b4-eb078d64dedc)
+- Consultamos el historial de logs almacenados en la base de datos de MongoDB desde la aplicación web
 
+</div style="text-align:center">
+  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/a05c7cb1-8f68-43c5-8943-f2d5486501a3"
+  alt="service9">
+</div>
+
+- Verificamos que los datos se hayan almacenado correctamente en la base de datos de MongoDB
+
+</div style="text-align:center">
+  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/68b007a7-8ec6-4088-9c76-1bc296f1c1db"
+  alt="service5">
+</div>
+
+- Verificamos que los datos se hayan almacenado correctamente en la base de datos de Redis
+
+</div style="text-align:center">
+  <img src="https://github.com/joshi-debb/SO1_1S2024_202006353/assets/87725718/be800698-b8a6-4b0d-b3de-1a01f9f1b556"
+  alt="service6">
+</div>
 
 ## Conclusiones
+
+Se logró implementar una arquitectura de software distribuida basada en microservicios, que permite escalar y desplegar aplicaciones de forma eficiente y flexible.
+
+Se utilizó una combinación de tecnologías y servicios de Google Cloud Platform (GCP), Kubernetes, Kafka, Nginx, Cloud Run, Ingress, Locust, Redis, MongoDB, Grafana, gRPC, WebAssembly (WASM), Go y Docker para implementar un sistema de votación en tiempo real para un concurso de bandas de música guatemalteca.
+
+Se demostró la importancia de utilizar sistemas de mensajería para gestionar la comunicación entre los distintos componentes del sistema de forma asíncrona y desacoplada, lo que permite una mayor escalabilidad, disponibilidad y tolerancia a fallos.
+
+No se pudo demostrar cual servicio es mas rapido entre gRPC y WASM ya que no se logro implementar correctamente el servicio de WASM.
+
+Apesar de no haber implementado correctamente el servicio de WASM utilizaría gRPC para la comunicación eficiente entre servicios distribuidos, mientras que utilizarías WebAssembly para ejecutar código de alto rendimiento en el navegador web o en entornos de servidor.
 
 
 

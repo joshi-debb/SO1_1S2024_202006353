@@ -1,0 +1,62 @@
+
+version: '3'
+
+services:
+  mydb:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: MyPass123
+      MYSQL_DATABASE: db_so1py1
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mydb_data:/var/lib/mysql
+    networks:
+      - mynet
+
+  api:
+    build: "./backend"
+    image: 'bekinggo/proyecto1-api'
+    container_name: 'backend_so1py1'
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mydb
+    links:
+      - mydb
+    networks:
+      - mynet
+    privileged: true
+    pid: host
+    volumes:
+      - type: bind
+        source: /proc
+        target: /proc
+
+
+  front:
+    build: "./frontend"
+    image: 'bekinggo/proyecto1-front'
+    container_name: 'frontend_so1py1'
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - api
+    networks:
+      - mynet
+
+
+volumes:
+  mydb_data:
+    external: false
+  
+networks:
+  mynet:
+    external: true
+
+

@@ -1,1 +1,1 @@
-cmd_/home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/ram/ram.mod := { echo  /home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/ram/ram.o;  echo; } > /home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/ram/ram.mod
+savedcmd_/home/why/Desktop/Proyecto1/backend/mods/ram/ram.mod := printf '%s\n'   ram.o | awk '!x[$$0]++ { print("/home/why/Desktop/Proyecto1/backend/mods/ram/"$$0) }' > /home/why/Desktop/Proyecto1/backend/mods/ram/ram.mod

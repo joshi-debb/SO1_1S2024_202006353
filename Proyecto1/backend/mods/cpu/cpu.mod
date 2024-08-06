@@ -1,2 +1,1 @@
-/home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/cpu.o
-
+/home/why/Desktop/Proyecto1/backend/mods/cpu/cpu.o

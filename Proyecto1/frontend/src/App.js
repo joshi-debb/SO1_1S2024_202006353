@@ -2,7 +2,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
-import StateDiagram from './pages/StateDiagram';
 import RealTimeMonitor from './pages/RealTimeMonitor';
 import OverTimeMonitor from './pages/OverTimeMonitor';
 import ProcessTree from './pages/ProcessTree';
@@ -15,11 +14,10 @@ function App() {
 
   const routes = [
     { path: '/', component: Home},
-    { path: '/StateDiagram', component: StateDiagram },
     { path: '/RealTimeMonitor', component: RealTimeMonitor },
     { path: '/OverTimeMonitor', component: OverTimeMonitor },
     { path: '/ProcessTree', component: ProcessTree },
-    { path: '/StateChange', component: StateChange}
+    { path: '/ProcessSimulator', component: StateChange}
   ];
 
   return (
@@ -36,9 +34,7 @@ function App() {
                 <li><Link to="/RealTimeMonitor">Real-Time Monitoring</Link></li>
                 <li><Link to="/OverTimeMonitor">Over-Time Monitoring</Link></li>
                 <li><Link to="/ProcessTree">Process Tree</Link></li>
-                <li><Link to="/StateChange">Changes in Processes</Link></li>
-                <li><Link to="/StateDiagram">Process State Diagram</Link></li>
-
+                <li><Link to="/ProcessSimulator">Process Simulator</Link></li>
               </ul>
             </div>
             <div className="pages-style" >

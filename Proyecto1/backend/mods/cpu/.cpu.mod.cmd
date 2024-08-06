@@ -1,1 +1,1 @@
-cmd_/home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/cpu.mod := { echo  /home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/cpu.o;  echo; } > /home/why/SO1_1S2024_202006353/Proyecto1/backend/mods/cpu/cpu.mod
+savedcmd_/home/why/Desktop/Proyecto1/backend/mods/cpu/cpu.mod := printf '%s\n'   cpu.o | awk '!x[$$0]++ { print("/home/why/Desktop/Proyecto1/backend/mods/cpu/"$$0) }' > /home/why/Desktop/Proyecto1/backend/mods/cpu/cpu.mod
